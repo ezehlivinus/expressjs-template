@@ -7,22 +7,17 @@ It allows expressjs developers to start developing without worrying about settin
 ## Setup
 - Clone : before cloning it is assumed that you have mongodb installed and optional mongodb GUI browser like `Mongodb Compass`
 - Terminal/CLI command: `npm install` to install dependencies
-- Terminal/CLI command: `npm run setup:env` or `cp .env.example .env` to create .env file based on the .env.example file. Setup the created .env file
-  - The `NODE_ENV`: This app maintains one of the three environments (env(s)) at a time, `production`, `development`, or `test`
-  - To switch to any env
-    - Stop the server if currently running
-    - Set the key `NODE_ENV` in the `.env` file to `production`, `development`, or `test`.
-    - setup your yahoo mail or gmail or any other mail service and get credentials for sending mail...use those credention to update .env
-- Start the app in dev mode: `npm run dev` or prod mode: `npm run start`. However, regardless of any of these commands, what ever is set in NODE_ENV is assume the current NODE Environment. Always make sure that it is set always be in the right environment
+- Terminal/CLI command: `npm run setup:env` or `cp .env.example .env` to create .`env` file based on the `.env.example` file.
 
-## Frontend developers guide
-- If you want to consume the app locally, then follow the setup process above
-  - If you encounter any defficulty, beckon on the backend developers in your team for help, trust me they will surelly know what to do.
-  - Then use the doc at `./documentations/doc/index.html` ( or `<your-host>/api/v1/docs` if it has been configure to do so) and access to know the endpoints to make calls to and their requirements.
-  - Then start making calls to the provided host, mostly: localhost:port/api/v1
-- If you want to consume the API online:
-  - Then point your browser to: `<wherever-your-team-hosted-the-doc-online/api/v1/docs`, check the docs
-  - Then make calls to to the endpoints provided on the doc above
+- Setup the created `.env` file
+  - The `NODE_ENV`: This app maintains one of the three environments (env(s)) at a time, `production`, `development`, or `test`.
+  - An environment is changed or switched when the server starts or ran in any of this mode. Check starting the app in different env for more info.
+  - setup your yahoo mail service and get credentials for sending mail...use those credentials to update .env for EMAIL and PASSWORD property. You can use gmail, If you are comfortable with it. 
+
+- Starting the app in different envs:
+    - Production env: `npm run start`. This is used when the app is running on a production server.
+    - Development env: `npm run dev`. This is when you are testing and making changes in your `local` machine
+    - Test env: `npm run test`. This is when you have written test or want to check if the existing tests are passing.
 
 ## Usage
 #### This is how the API documentation should be hosted/treated
@@ -117,4 +112,6 @@ We have adopted the npm package naming conveitions for our files and folder:
   - `user-controller.js` : not its camel or snake case counterparts
 
 ## Coding convention
-To be proveded later
+To be provided later: But basically the following serve for now we depend
+- We uses `ESLint` and `AirBnG JavaScript style guide`
+- If you are using VSCode, You are encouraged to install `ESLint` extension by `Dirk Baeumer` and make sure it is enabled
