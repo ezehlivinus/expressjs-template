@@ -5,15 +5,19 @@ This is a starter template/boiler plate for expressjs
 It allows expressjs developers to start developing without worrying about setting up development environment from scratch each time.
 
 ## Setup
-- Clone
+- Clone : before cloning it is assumed that you have mongodb installed and optional mongodb GUI browser like `Mongodb Compass`
 - Terminal/CLI command: `npm install` to install dependencies
-- Terminal/CLI command: `npm run setup:env` or `cp .env.example .env` to create .env file based on the .env.example file. Setup the created .env file
-  - The `NODE_ENV`: This app maintains one of the three environments (env(s)) at a time, `production`, `development`, or `test`
-  - To switch to any env
-    - Stop the server if currently running
-    - Set the key `NODE_ENV` in the `.env` file to `production`, `development`, or `test`.
-    - setup your yahoo mail or gmail and get credential for sending mail
-- Start the app in dev mode: `npm run dev` or prod mode: `npm run start`. However, regardless of any of these commands, what ever is set in NODE_ENV is assume the current NODE Environment.
+- Terminal/CLI command: `npm run setup:env` or `cp .env.example .env` to create .`env` file based on the `.env.example` file.
+
+- Setup the created `.env` file
+  - The `NODE_ENV`: This app maintains one of the three environments (env(s)) at a time, `production`, `development`, or `test`.
+  - An environment is changed or switched when the server starts or ran in any of this mode. Check starting the app in different env for more info.
+  - setup your yahoo mail service and get credentials for sending mail...use those credentials to update .env for EMAIL and PASSWORD property. You can use gmail, If you are comfortable with it. 
+
+- Starting the app in different envs:
+    - Production env: `npm run start`. This is used when the app is running on a production server.
+    - Development env: `npm run dev`. This is when you are testing and making changes in your `local` machine
+    - Test env: `npm run test`. This is when you have written test or want to check if the existing tests are passing.
 
 ## Usage
 #### This is how the API documentation should be hosted/treated
@@ -94,3 +98,7 @@ This describes the project structure of this template
   - `Procfile`: defines the app entry point
   - `package.json`: contains the app configuration
 
+## Coding convention
+To be provided later: But basically the following serve for now we depend
+- We uses `ESLint` and `AirBnG JavaScript style guide`
+- If you are using VSCode, You are encouraged to install `ESLint` extension by `Dirk Baeumer` and make sure it is enabled
