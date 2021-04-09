@@ -1,6 +1,6 @@
 // require your routes here
-const users = require('../routes/users');
-const docs = require('../routes/docs');
+const users = require('../routes/user.routes');
+const docs = require('../routes/doc.routes');
 const { BASE_PATH } = require('../config/env');
 
 /**

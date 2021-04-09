@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     indent: ['error', 2],
     'comma-dangle': ['error', 'never'],
+    // 'linebreak-style': ['error', 'windows'], // set a line ending
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'no-underscore-dangle': [
