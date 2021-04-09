@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const asyncError = require('../middlewares/async-error');
+const asyncError = require('../middlewares/async-error.middleware');
 const { exceptRejectionLogger } = require('../config/logging');
 const routes = require('./routes');
 

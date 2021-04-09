@@ -2,10 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 
-const UserController = require('../controllers/user-controller');
+const UserController = require('../controllers/user.controller');
 const auth = require('../middlewares/authentication');
 const permit = require('../middlewares/permission');
-const authRoutes = require('./auths');
+const authRoutes = require('./auth.routes');
 
 router.use(authRoutes);
 
@@ -14,7 +14,7 @@ router.route('/')
   .post(UserController.create); // Do not authenticate this, no detail to check against
 
 router.route('/:id').all([auth])
-  .get([permit.grant('readOwn', 'userAccount')], UserController.detail)
+  .get([permit.grant('readOwn', 'userAccount')], UserController.retrieve)
   .put([permit.grant('updateOwn', 'userAccount')], UserController.update)
   .patch([permit.grant('updateOwn', 'userAccount')], UserController.update)
   .delete([permit.grant('deleteAny', 'userAccount')], UserController.delete);
